@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<!-- 기본타입 singletone lazy-init="default"설정하면 객체화하지 않는다.  -->
+	<bean id="mitv" class="com.spring.first.MiTv" scope="singleton" lazy-init="default">
+		<!-- constructor-arg ref="speaker"></constructor-arg-->
+		<property name="speaker" ref="speaker"></property>
+	</bean>	
+	
+	<bean id="speaker" class="com.spring.first.SonySpeaker">
+		<constructor-arg value="30"></constructor-arg><!-- 빈등록할때 30을 때려박고 빈등록하라 -->
+	</bean><!-- 기본생성자가없어서 빨간줄 뜬다. -->
+	
+	
+	
+</beans>
